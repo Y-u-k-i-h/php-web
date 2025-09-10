@@ -1,5 +1,7 @@
 <?php
 
+namespace controllers;
+
 class SignupController {
     private $fname;
     private $lname;
