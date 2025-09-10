@@ -41,8 +41,8 @@
 
             <br>
 
-            <button type="submit">Sign Up</button>
-            <button type="button">Go to Login</button>
+            <button type="submit" name="signup" value="signup">Sign Up</button>
+            <button type="button" name="login" value="login">Go to Login</button>
         </form>
     </body>
 

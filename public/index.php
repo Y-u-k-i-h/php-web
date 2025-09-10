@@ -1,3 +1,3 @@
 <?php
-    print_r(PDO::getAvailableDrivers());
+    echo __DIR__;
 ?>
