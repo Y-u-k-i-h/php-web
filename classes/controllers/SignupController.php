@@ -2,7 +2,11 @@
 
 namespace controllers;
 
-class SignupController {
+require_once "../../autoloader.php";
+
+use Database;
+
+class SignupController extends Database{
     private $fname;
     private $lname;
     private $username;
@@ -19,4 +23,23 @@ class SignupController {
         $this->confirm_password = $confirm_password;
     }
 
+    protected function signup() {
+        
+    }
+
+    protected function validateInput() {
+        // Password match check
+        if ($this->password !== $this->confirm_password) {
+            echo "<script>alert('Passwords do not match.'); window.location.href = 'public/views/signup.php';</script>";
+            return false;
+        }
+
+        // Empty field check
+        if (empty($this->fname) || empty($this->lname) || empty($this->username) || empty($this->email) || empty($this->password) || empty($this->confirm_password)) {
+            echo "<script>alert('All fields are required.'); window.location.href = 'public/views/signup.php';</script>";
+            return false;
+        }
+
+        
+    }
 }
