@@ -1,5 +1,8 @@
 <?php
 
+require_once "vendor/autoload.php";
+require_once "config/conf.php";
+
 spl_autoload_register(function ($className) {
     $correctClassPath = str_replace("\\", "/", $className);
     $classFilePath = __DIR__ . "/classes/" . $correctClassPath . ".php";

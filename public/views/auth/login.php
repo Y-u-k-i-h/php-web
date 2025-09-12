@@ -22,6 +22,7 @@
             <br>
 
             <button type="submit">Log In</button>
+            <button type="button" onclick="window.location.href='signup.php'">Go back</button>
         </form>
     </body>
 

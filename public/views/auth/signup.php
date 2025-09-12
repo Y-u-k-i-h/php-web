@@ -10,7 +10,7 @@
 
     <body>
         <h1>Sign Up</h1>
-        <form method="post">
+        <form method="post" action="/handlers/signupHandler.php">
             <label for="fname">First Name:</label>
             <input type="text" id="fname" name="fname" required>
 
@@ -42,7 +42,7 @@
             <br>
 
             <button type="submit" name="signup" value="signup">Sign Up</button>
-            <button type="button" name="login" value="login">Go to Login</button>
+            <button type="button" name="login" value="login" onclick="window.location.href='login.php'">Go to Login</button>
         </form>
     </body>
 
