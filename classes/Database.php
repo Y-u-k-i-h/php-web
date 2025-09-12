@@ -34,5 +34,13 @@ class Database {
         }
     }
 
+    public function getUsers() {
+        $query = "SELECT * FROM users;";
+        $stmt = $this->connect()->prepare($query);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($results);
+    }
+
     
 }
