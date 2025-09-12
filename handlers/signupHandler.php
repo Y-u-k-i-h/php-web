@@ -46,6 +46,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             $signup->signUpUser();
+
+            // Send a welcome email
+            $mail = new services\Mail($email);
+            $subject = "Welcome to SimpleWebPHPy!";
+            $body = "<h1>Welcome, $fname!</h1><p>Thank you for signing up at SimpleWebPHPy. We're excited to have you on board!</p>";            
+            $mail->sendMail($subject, $body);
+            
             header("location: /public/views/auth/login.php");
             exit();
         } catch (Exception $e) {
